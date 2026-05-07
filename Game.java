@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+
 public class Game {
 	//bool flags for movement
 	static boolean up, down, left, right;

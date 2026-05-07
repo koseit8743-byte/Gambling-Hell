@@ -1,6 +1,6 @@
 import javax.swing.JFrame;
 import java.awt.Graphics;
-
+import java.awt.Color;
 import javax.swing.JFrame;
 
 public class Player {
@@ -9,7 +9,7 @@ public class Player {
 	int y = 100;
 	public Player(JFrame framepanel) {
 		x = framepanel.getWidth() / 2;
-		y = framePanel.getHeight() / 2;
+		y = framepanel.getHeight() / 2;
 	};
 	
 	//movement flags read here to start movement
