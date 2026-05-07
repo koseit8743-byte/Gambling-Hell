@@ -42,6 +42,8 @@ public class Game {
 					down = true;
 				} else if (in.getKeyCode() == KeyEvent.VK_D) {
 					right = true;
+				} else if (in.getKeyCode() == KeyEvent.VK_SHIFT) {
+					jPlayer.speed = 6;
 				}
 			}
 
@@ -55,7 +57,9 @@ public class Game {
                     down = false;
                 } else if (in.getKeyCode() == KeyEvent.VK_D) {
                     right = false;
-                }
+                } else if (in.getKeyCode() == KeyEvent.VK_SHIFT) {
+					jPlayer.speed = 3;
+				}
 			}
 			public void keyTyped(KeyEvent doesntmatter) {}; //has to be here to avoid an error
 		});

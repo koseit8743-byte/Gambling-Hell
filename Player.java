@@ -25,6 +25,7 @@ public class Player {
 	
 	//movement flags read here to start movement
 	public void updatePos(boolean u, boolean d, boolean l, boolean r) {
+		
 		if (u) y -= speed;
 		if (d) y += speed;
 		if (l) x -= speed;
