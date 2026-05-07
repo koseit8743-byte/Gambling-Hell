@@ -4,6 +4,8 @@ import java.awt.Color;
 import javax.swing.JFrame;
 
 public class Player {
+	int health = 5;
+	int score = 0;
 	int speed = 3;
 	int x = 100;
 	int y = 100;
@@ -16,8 +18,8 @@ public class Player {
 	public void updatePos(boolean u, boolean d, boolean l, boolean r) {
 		if (u) y -= speed;
 		if (d) y += speed;
-		if (l) x += speed;
-		if (r) x -= speed;
+		if (l) x -= speed;
+		if (r) x += speed;
 	}
 	
 	public void renderPlayer(Graphics playersprite) {

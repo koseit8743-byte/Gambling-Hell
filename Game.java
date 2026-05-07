@@ -22,7 +22,7 @@ public class Game {
 			//anything that has to be updated visually should be added here
 			public void paintComponent(Graphics sprite) {
 				super.paintComponent(sprite); //clears old frame kinda like system("clear")
-				testText.setText("just a test");
+				testText.setText("just a test, Player X:" + jPlayer.x + " Y:" + jPlayer.y);
 				jPlayer.renderPlayer(sprite);
 			}//basically overloaded swing's paintComponent method here
 		};
