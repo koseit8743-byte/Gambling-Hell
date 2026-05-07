@@ -23,7 +23,27 @@ public class Game {
 			}//basically overloaded swing's paintComponent method here
 		};
 
-		//in
+		//input reader
+		window.addKeyListener(new KeyListener() {//defining KeyListener so input can be read
+			//set flags true on key down
+			//set flags false on key off
+			
+			public void keyPressed(KeyEvent in) {
+				if (in.getKeyCode() == KeyEvent.VK_W) {
+					up = true;
+				} else if (in.getKeyCode() == KeyEvent.VK_A) {
+					left == true;
+				} else if (in.getKeyCode() == KeyEvent.VK_S) {
+					down = true;
+				} else if (in getKeyCode() == KeyEvent.VK_D) {
+					right = true;
+				}
+			}
+
+			public void keyReleased(KeyEvent in) {
+				
+			}
+		});
 	}
 
 
