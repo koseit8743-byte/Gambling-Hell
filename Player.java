@@ -1,4 +1,7 @@
 import javax.swing.JFrame;
+import java.awt.Graphics;
+
+import javax.swing.JFrame;
 
 public class Player {
 	int speed = 3;
@@ -17,5 +20,8 @@ public class Player {
 		if (r) x -= speed;
 	}
 	
-	public void renderPlayer() {};
+	public void renderPlayer(Graphics playersprite) {
+		playersprite.setColor(Color.GREEN);
+		playersprite.fillRect(x,y,10,10);
+	};
 }
