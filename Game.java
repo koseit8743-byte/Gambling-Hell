@@ -41,9 +41,21 @@ public class Game {
 			}
 
 			public void keyReleased(KeyEvent in) {
-				
+				if (in.getKeyCode() == KeyEvent.VK_W) {
+					up = false;
+
+                } else if  (in.getKeyCode() == KeyEvent.VK_A) {
+                    left = false;
+                } else if (in.getKeyCode() == KeyEvent.VK_S) {
+                    down = false;
+                } else if (in.getKeyCode() == KeyEvent.VK_D) {
+                    right = false;
+                }
 			}
+			public void keyTyped(KeyEvent doesntmatter) {}; //has to be here to avoid an error
 		});
+
+		
 	}
 
 
