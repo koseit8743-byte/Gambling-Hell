@@ -31,22 +31,23 @@ chat
     5) Technical: Chat
 
 ### Team members and our goals:
-    - Cook:
-        - Thing 1:
-        - Thing 2:
-        - Thing 3:
-    - Osei Tutu:
-        - Thing 1:
-        - Thing 2:
-        - Thing 3:
-    - Robles:
-        - Thing 1:
-        - Thing 2:
-        - Thing 3:
-    - Laura:
-        - Thing 1:
-        - Thing 2:
-        - Thing 3:
+    - Cook: Gacha/lootbox
+        - Rewards
+        - Skins
+        - Bullet Colors
+        - Use Player's score points
+    - Osei Tutu: Network/Chat Logic
+        - Set up server
+        - Have ability to connect multiple clients to server
+        - Implement chat through networking 
+    - Robles: Game 
+        - Create Player, Enemy, and Bullet Logic
+        - Handle taking damage/movement
+        - Handle Game Mechanics
+    - Laura: UI/Using Swing
+        - Have chat display
+        - Create Menu/UI
+        - Handle Visual Design
 
 ### Immediate To-Do List:
     1) Figure out how to use swing
