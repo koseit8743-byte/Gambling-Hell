@@ -28,7 +28,8 @@ public class Game {
 			//set flags true on key down
 			//set flags false on key off
 			
-			public void keyPressed(KeyEvent in) {
+			//the flags are checked in Player to start movement			
+			public void keyPressed(KeyEvent in) {//behavior only when the key is pressed down
 				if (in.getKeyCode() == KeyEvent.VK_W) {
 					up = true;
 				} else if (in.getKeyCode() == KeyEvent.VK_A) {
@@ -40,7 +41,7 @@ public class Game {
 				}
 			}
 
-			public void keyReleased(KeyEvent in) {
+			public void keyReleased(KeyEvent in) {//same for released
 				if (in.getKeyCode() == KeyEvent.VK_W) {
 					up = false;
 
@@ -55,7 +56,30 @@ public class Game {
 			public void keyTyped(KeyEvent doesntmatter) {}; //has to be here to avoid an error
 		});
 
+		visualPanel.setBackground(Color.DARK_GRAY);
 		
+		
+        testText.setForeground(Color.WHITE);
+		visualPanel.add(testText);
+
+		visualPanel.setPreferredSize(new Dimension(1080, 720)); //sets the visualPanel size, it'll get added to the JFrame and the JFrame will resize to fit the panel
+		visualPanel.repaint();
+        window.add(visualPanel); //adds the panel to the window
+		window.pack(); //resizes window to fit the panel
+		
+
+		window.setVisible(true); //so the window shows up on screen
+					
+
+        //game loop
+        while (true) {
+            jPlayer.updatePos(up, down, left, right, sprint);
+            visualPanel.repaint();
+
+            try {
+                Thread.sleep(16); //sets the speed of the game basically, like the framerate. Won't work without the try/catch loop for some reason
+            } catch (Exception e) {};        
+        }
 	}
 
 
