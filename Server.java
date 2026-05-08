@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Server{ 
 	private static final int PORT = 49822;
-	private static Set<Printwriter> clientWriters = new Hashset<>();
+	private static Set<PrintWriter> clientWriters = new HashSet<>();
 
 	public static void main(String[] args){
 
@@ -26,7 +26,7 @@ public class Server{
 	}
 
 	static class ClientHandler implements Runnable{
-		private Socket sockt;
+		private Socket socket;
 		private PrintWriter out;
 		private BufferedReader in;
 		private String clientAddress;
@@ -43,8 +43,8 @@ public class Server{
 					clientWriters.add(out);
 				}
 				System.out.println("Client " + clientAddress + " is now ready to chat");
-				Strinf message;
-				while((message - in.readLine()) != null) {
+				String  message;
+				while((message =  in.readLine()) != null) {
 					System.out.println("[" + clientAddress + "] " + message);
 					synchronized(clientWriters){
 						for(PrintWriter writer  : clientWriters){
@@ -52,13 +52,15 @@ public class Server{
 						}
 					}
 					}
-			} catch (IOException e)[
+			} catch (IOException e){
 			System.out.println("Client " + clientAddress + " disconnected");
 		} finally {
-			synchronized (clientWriters0{
-				clientWriters.remove(out0;
+			synchronized (clientWriters){
+				clientWriters.remove(out);
 			}
-			try [socket.close(); } catch(IOException e) {}
+			try {socket.close(); } catch(IOException e) {}
 			System.out.println("Cleaned up client " + clientAddress);
 	}
+	}
+}
 }
