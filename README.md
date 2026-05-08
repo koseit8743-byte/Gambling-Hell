@@ -1,29 +1,11 @@
-need to make inventory for skins, bullet color, etc
-    gatcha stuff
-    points to spend on lootbox
-    equip when game is paused
 
-map/movement
-
-game design
-    3 levels
-
-bullet patterns
-
-multiplayer
-    whoever does more damage/less damage taken
-
-chat
-    separate window
 ### WELCOME TO GAMBLING HELL
-    - What our game will do
-    - Controls
-    - Objectives
-    - Any unique features
-    - How the gacha works
-    - Anything else about the game
+    - Controls: WASD Movement, Spacebar shooting
+    - Objectives: Score as many points my killimng enemies without dying
+    - Chat System
 
-### Objectives left to complete:
+
+### Project Requirements
     1) Java
     2) Networking
     3) Genre: Bullet Hell
@@ -36,22 +18,33 @@ chat
         - Skins
         - Bullet Colors
         - Use Player's score points
+        - Inventory System
+
     - Osei Tutu: Network/Chat Logic
-        - Set up server
+        - Set up Client/Host Networking
+        - Handle Server communication 
         - Have ability to connect multiple clients to server
-        - Implement chat through networking 
+        - Chat through networking
+
     - Robles: Game 
-        - Create Player, Enemy, and Bullet Logic
-        - Handle taking damage/movement
-        - Handle Game Mechanics
+        - Create Player, Enemy, and Bullet Logic IN PROGRESS
+        - Handle taking damage/health  DONE
+        - Bullet direction logic IN PROGRESS
+        - Collision System DONE
+        - Handle Score  DONE
+        - Spawn characters IN PROGRESS
+        - Object/Character removal DONE
+
     - Laura: UI/Using Swing
         - Have chat display
+        - Swing game window
         - Create Menu/UI
+        - Game rendering
         - Handle Visual Design
 
-### Immediate To-Do List:
-    1) Figure out how to use swing
-    2) Set up networking
-    3) etc.
+### Technical Features:
+    1) Chat System
+    2) Rectangle Hitbox detection
+    3) Using Java Swing
 
 ### Thank you for reading our README ^^
