@@ -8,7 +8,7 @@ public class Server{
 
 	public static void main(String[] args){
 
-		System.out.println("===GamblingHell Server Started on port" + PORT +" ===");
+		System.out.println("=== GamblingHell Server Started on port " + PORT +" ===");
 
 		try(ServerSocket serverSocket = new ServerSocket(PORT)){
 			while(true){
@@ -21,7 +21,7 @@ public class Server{
 
 		} catch (IOException e ){
 			System.out.println("Server error: " + e.getMessage());
-			System.out.println(" Try changint the PORT to another number between 49152 and 65535");
+			System.out.println(" Try changing the PORT to another number between 49152 and 65535");
 			}
 	}
 
