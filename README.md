@@ -37,11 +37,11 @@
         - Object/Character removal DONE
 
     - Laura: UI/Using Swing
-        - Have chat display
-        - Swing game window
-        - Create Menu/UI
-        - Game rendering
-        - Handle Visual Design
+        [DONE] Have chat display
+        [DONE] Swing game window 
+        [PROG] Create Menu/UI 
+        [DONE] Game rendering 
+        - Handle Visual Design 
 
 ### Technical Features:
     1) Chat System
