@@ -31,6 +31,7 @@ public class Chat {
 			chatArea.append("[" + timeSent + "] Me: " + message + "\n"); 
 			textInputBox.setText(""); 
 		});
+		chatPanel.add(new JScrollPane(chatArea), BorderLayout.CENTER);
 		chatPanel.add(textInputBox, BorderLayout.SOUTH);
 		chatWindow.add(chatPanel);
 		
