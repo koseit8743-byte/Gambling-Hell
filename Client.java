@@ -1,6 +1,6 @@
 import java.io.*;
 import java.net.*;
-import java.util.scanner;
+import java.util.Scanner;
 
 public class Client {
 	private static final int PORT = 49822;
@@ -13,32 +13,32 @@ public class Client {
 		System.out.print("Enter your name: ");
 		String name = scanner.nextLine();
 
-		System.out.println("Connecting to " + " on port " +PORT + "...");
+		System.out.println("Connecting to " + SERVER_ADDRESS + " on port " + PORT + "...");
 
 		try(Socket socket = new Socket(SERVER_ADDRESS, PORT)){
 
-			PringWriter out = new PrintWriter(socket.getOutputStream(), true);
+			PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 
 			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
 			System.out.println("Connected to server!");
 
-			Thread recieveThread = new Thread(()-> {
+			Thread receiveThread = new Thread(()-> {
 				try{
 					String message;
 					while ((message = in.readLine()) != null){
-						System.outprintln(message);
+						System.out.println(message);
 					}
 				}catch(IOException e){
 					System.out.println("Disconnected from server");
 				}
 			});
 
-			recieveThread.start();
+			receiveThread.start();
 
 			System.out.println("Type messages ( type quit to exit):");
 			String input;
-			while(!(input = scanner.nextLine()).equalsIgnoreCase("quit)){
+			while(!(input = scanner.nextLine()).equalsIgnoreCase("quit")){
 				out.println(name + ": " + input);
 			}
 
