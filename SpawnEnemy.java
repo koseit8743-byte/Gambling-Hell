@@ -17,14 +17,15 @@ public class SpawnEnemy{
 		shoot_time++;
 
 		if(spawn_time >= spawn_freq){
-
+			//MAX 15 enemies on screen at once
 			if(enemies.size() < 15){
 				int enemy_x = rand.nextInt(1000);
 				int enemy_y= 0;
 
 				enemies.add(new Enemy(enemy_x,enemy_y));
-				spawn_time=0;
 			}
+			spawn_time=0;
+			
 		}
 
 		if(shoot_time >= shoot_freq){
@@ -32,7 +33,20 @@ public class SpawnEnemy{
 			for(int i=0; i < enemies.size(); i++){
 				Enemy ene = enemies.get(i);
 
-				bullets.add(new Bullet(ene.x+ene.width/2, ene.y+ene.height,true));
+				//where the bullets will start from based on enemy position
+				int sx = ene.x+ene.width/2;
+				int sy= ene.y+ene.height;
+
+				
+				int patternchoice = rand.nextInt(2);//random shot pattern assignment
+
+				if(patternchoice==0){//straight down shot
+					bullets.add(new Bullet(sx,sy,true,0,8));
+				}
+				else{//diagonal 3 way shot
+					bullets.add(new Bullet(sx,sy,true,-3, 6));
+					bullets.add(new Bullet(sx,sy,true,0, 7));
+					bullets.add(new Bullet(sx,sy,true,3, 6));
 			}
 			shoot_time=0;
 		}
