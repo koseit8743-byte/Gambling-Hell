@@ -26,7 +26,7 @@ public class Chat {
 		
 		textInputBox.addActionListener(event -> {
 			String message = textInputBox.getText();
-			timeSent = LocalTime.now().toString();
+			timeSent = LocalTime.now().withNano(0).toString();
 			//if we need to edit the message format its on this line here
 			chatArea.append("[" + timeSent + "] Me: " + message + "\n"); 
 			textInputBox.setText(""); 
