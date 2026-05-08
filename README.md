@@ -28,11 +28,12 @@
 
     - Robles: Game 
         - Create Player, Enemy, and Bullet Logic IN PROGRESS
+        - Incorporate Inventory IN PROGRESS
         - Handle taking damage/health  DONE
-        - Bullet direction logic IN PROGRESS
+        - Bullet direction/Patterns logic DONE
         - Collision System DONE
         - Handle Score  DONE
-        - Spawn characters IN PROGRESS
+        - Spawn characters DONE
         - Object/Character removal DONE
 
     - Laura: UI/Using Swing
