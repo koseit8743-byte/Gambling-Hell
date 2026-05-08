@@ -41,7 +41,7 @@ public class Game {
 					down = true;
 				} else if (in.getKeyCode() == KeyEvent.VK_D) {
 					right = true;
-				} else if (in.getKeyCode() == KeyEvent.VK_SHIFT) {
+				} else if (in.getKeyCode() == KeyEvent.VK_SHIFT) {// hold shift to sprint, might convert to a dash with cooldown later
 					jPlayer.speed = 6;
 				}
 			}
