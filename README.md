@@ -1,29 +1,11 @@
-need to make inventory for skins, bullet color, etc
-    gatcha stuff
-    points to spend on lootbox
-    equip when game is paused
 
-map/movement
-
-game design
-    3 levels
-
-bullet patterns
-
-multiplayer
-    whoever does more damage/less damage taken
-
-chat
-    separate window
 ### WELCOME TO GAMBLING HELL
-    - What our game will do
-    - Controls
-    - Objectives
-    - Any unique features
-    - How the gacha works
-    - Anything else about the game
+    - Controls: WASD Movement, Spacebar shooting
+    - Objectives: Score as many points my killimng enemies without dying
+    - Chat System
 
-### Objectives left to complete:
+
+### Project Requirements
     1) Java
     2) Networking
     3) Genre: Bullet Hell
@@ -47,22 +29,34 @@ chat
             - Set list of items that the player can get from their wishing
                 - Limited for now, more to be added
         - Gacha/Wishing menu (To be implemented)
-    - Osei Tutu: Network/Chat Logic
-        - Set up server
-        - Have ability to connect multiple clients to server
-        - Implement chat through networking 
-    - Robles: Game 
-        - Create Player, Enemy, and Bullet Logic
-        - Handle taking damage/movement
-        - Handle Game Mechanics
-    - Laura: UI/Using Swing
-        - Have chat display
-        - Create Menu/UI
-        - Handle Visual Design
+        - Inventory System
 
-### Immediate To-Do List:
-    1) Figure out how to use swing
-    2) Set up networking
-    3) etc.
+    - Osei Tutu: Network/Chat Logic
+        - Set up Client/Host Networking
+        - Handle Server communication 
+        - Have ability to connect multiple clients to server
+        - Chat through networking
+
+    - Robles: Game 
+        - Create Player, Enemy, and Bullet Logic IN PROGRESS
+        - Incorporate Inventory IN PROGRESS
+        - Handle taking damage/health  DONE
+        - Bullet direction/Patterns logic DONE
+        - Collision System DONE
+        - Handle Score  DONE
+        - Spawn characters DONE
+        - Object/Character removal DONE
+
+    - Laura: UI/Using Swing
+        [DONE] Have chat display
+        [DONE] Swing game window 
+        [PROG] Create Menu/UI 
+        [DONE] Game rendering 
+        - Handle Visual Design 
+
+### Technical Features:
+    1) Chat System
+    2) Rectangle Hitbox detection
+    3) Using Java Swing
 
 ### Thank you for reading our README ^^
