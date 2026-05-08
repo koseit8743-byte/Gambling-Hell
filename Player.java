@@ -17,12 +17,17 @@ public class Player {
 
 	bool alive=true;
 
-
+	/*
 	public Player(JFrame framepanel) {
 		x = framepanel.getWidth() / 2;
 		y = framepanel.getHeight() / 2;
-	}
+	}*/
 	
+	public void teleprotPlayer(JFrame framepanel) {
+		x = framepanel.getWidth() / 2;
+		y = framepanel.getHeight() / 2;
+	}
+
 	//movement flags read here to start movement
 	public void updatePos(boolean u, boolean d, boolean l, boolean r) {
 		
