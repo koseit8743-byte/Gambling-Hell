@@ -5,11 +5,10 @@ import java.awt.event.*;
 
 public class Game {
 	//bool flags for movement
-	static boolean up, down, left, right;
-
+	static boolean up, down, left, right, paused;
 	public static void main(String[] args) {
 		JFrame window = new JFrame("Gambling Hell"); //the JFrame will create the window for the Game
-		Player jPlayer = new Player(window); //window in param to get width/height of window
+		Player jPlayer = new Player(); //window in param to get width/height of window
 		JLabel testText = new JLabel();
 
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//means we can close the window through top right x
@@ -75,6 +74,7 @@ public class Game {
         window.add(visualPanel); //adds the panel to the window
 		window.pack(); //resizes window to fit the panel
 		
+		jPlayer.teleportPlayer(window);	
 
 		window.setVisible(true); //so the window shows up on screen
 					

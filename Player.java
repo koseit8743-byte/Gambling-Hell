@@ -15,7 +15,7 @@ public class Player {
 	int width=10;
 	int height=10;
 
-	bool alive=true;
+	boolean alive=true;
 
 	/*
 	public Player(JFrame framepanel) {
@@ -23,7 +23,7 @@ public class Player {
 		y = framepanel.getHeight() / 2;
 	}*/
 	
-	public void teleprotPlayer(JFrame framepanel) {
+	public void teleportPlayer(JFrame framepanel) {
 		x = framepanel.getWidth() / 2;
 		y = framepanel.getHeight() / 2;
 	}
