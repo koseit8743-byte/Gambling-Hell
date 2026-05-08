@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.time.LocalTime;
 
 public class Chat {
 	
@@ -10,7 +11,7 @@ public class Chat {
 	JTextArea chatArea;
 	JTextField textInputBox;
 	//JLabel message;
-	
+	String timeSent;
 	public Chat() {
 		chatWindow = new JFrame("Gambling Hell Chat");
 		chatPanel = new JPanel();
@@ -18,10 +19,19 @@ public class Chat {
 
 		chatPanel.setLayout(new BorderLayout());
 		chatArea = new JTextArea();
+		
+		
+		textInputBox = new JTextField();
 		chatArea.setEditable(false);
 		
-
-		chatWindow.add(textInputBox, BorderLayout.SOUTH);
+		textInputBox.addActionListener(event -> {
+			String message = textInputBox.getText();
+			timeSent = LocalTime.now().toString();
+			//if we need to edit the message format its on this line here
+			chatArea.append("[" + timeSent + "] Me: " + message + "\n"); 
+			textInputBox.setText(""); 
+		});
+		chatPanel.add(textInputBox, BorderLayout.SOUTH);
 		chatWindow.add(chatPanel);
 		
 		chatWindow.setSize(330,720);
