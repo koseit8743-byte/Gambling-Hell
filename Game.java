@@ -10,6 +10,8 @@ public class Game {
 		JFrame window = new JFrame("Gambling Hell"); //the JFrame will create the window for the Game
 		Player jPlayer = new Player(); //window in param to get width/height of window
 		JLabel testText = new JLabel();
+		
+		Chat jChat = new Chat();
 
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//means we can close the window through top right x
 
@@ -41,7 +43,7 @@ public class Game {
 					down = true;
 				} else if (in.getKeyCode() == KeyEvent.VK_D) {
 					right = true;
-				} else if (in.getKeyCode() == KeyEvent.VK_SHIFT) {
+				} else if (in.getKeyCode() == KeyEvent.VK_SHIFT) {// hold shift to sprint, might convert to a dash with cooldown later
 					jPlayer.speed = 6;
 				}
 			}
@@ -83,7 +85,7 @@ public class Game {
         while (true) {
             jPlayer.updatePos(up, down, left, right);
             visualPanel.repaint();
-
+			
             try {
                 Thread.sleep(16); //sets the speed of the game basically, like the framerate. Won't work without the try/catch loop for some reason
             } catch (Exception e) {};        
