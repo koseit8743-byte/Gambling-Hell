@@ -38,7 +38,7 @@ public class Chat {
 		chatWindow.setSize(330,720);
 		chatWindow.setVisible(true);
 
-
+	}
 		// Kwabe  new method
 		public void addIncomingMessage(String sender, String message){
 			timeSent = LocalTime.now().withNano(0).toString();
