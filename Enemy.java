@@ -24,4 +24,9 @@ public class Enemy{
 	public Rectangle get_bounds(){//collision detection
 		return new Rectangle(x,y,width,height);
 	}
+
+	public void renderEnemy(Graphics enemysprite) {
+		enemysprite.setColor(Color.RED);
+		enemysprite.fillRect(x,y,width,height);
+	}
 }
