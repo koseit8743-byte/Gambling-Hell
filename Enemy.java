@@ -11,7 +11,7 @@ public class Enemy{
 		y=initial_y;
 	}
 
-	public void update_enenmy(){
+	public void update_enemy(){
 		y+=speed;//enemy movement, just downwards for now
 
 		if(health<=0){//death

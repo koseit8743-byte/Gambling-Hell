@@ -38,10 +38,24 @@ public class SpawnEnemy{
 				int sy= ene.y+ene.height;
 
 				
-				int patternchoice = rand.nextInt(2);//random shot pattern assignment
+				int patternchoice = rand.nextInt(3);//random shot pattern assignment
 
 				if(patternchoice==0){//straight down shot
 					bullets.add(new Bullet(sx,sy,true,0,8));
+				}
+				else if(patternchoice==2){
+					bullets.add(new Bullet(sx,sy,true,0, -6));
+					bullets.add(new Bullet(sx,sy,true,0, 6));
+
+					bullets.add(new Bullet(sx,sy,true,-6, 0));
+					bullets.add(new Bullet(sx,sy,true,6, 0));
+
+					bullets.add(new Bullet(sx,sy,true,-4, -4));
+					bullets.add(new Bullet(sx,sy,true,4, -4));
+
+					bullets.add(new Bullet(sx,sy,true,-4, 4));
+					bullets.add(new Bullet(sx,sy,true,4, 4));
+
 				}
 				else{//diagonal 3 way shot
 					bullets.add(new Bullet(sx,sy,true,-3, 6));
