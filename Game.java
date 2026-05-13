@@ -23,6 +23,9 @@ public class Game {
 		ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 		ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 
+		SpawnEnemy spawner = new SpawnEnemy();
+		ObjectCollision collision = new ObjectCollision();
+
         //JPanels don't show up on the JFrame window by default
 		JPanel visualPanel = new JPanel() {//defining cutom behavior for JPanel
 		
@@ -32,6 +35,15 @@ public class Game {
 				super.paintComponent(sprite); //clears old frame kinda like system("clear")
 				testText.setText("just a test, Player X:" + jPlayer.x + " Y:" + jPlayer.y + " HP:" + jPlayer.health);
 				jPlayer.renderPlayer(sprite);
+
+				//render bullets and enemies
+				
+				for(int i= 0;i<enemies.size();i++){
+					enemies.get(i).renderEnemy(sprite);
+				}
+				for(int i= 0;i<bullets.size();i++){
+					bullets.get(i).renderBullet(sprite);
+				}
 			}//basically overloaded swing's paintComponent method here
 		};
 
@@ -52,6 +64,8 @@ public class Game {
 					right = true;
 				} else if (in.getKeyCode() == KeyEvent.VK_SHIFT) {// hold shift to sprint, might convert to a dash with cooldown later
 					jPlayer.speed = 6;
+				} else if (in.getKeyCode() == KeyEvent.VK_SPACE) {
+					jPlayer.shoot(bullets);
 				}
 			}
 
@@ -90,7 +104,25 @@ public class Game {
 
         //game loop
         while (true) {
+
+			if(!jPlayer.alive){
+				break;
+			}
             jPlayer.updatePos(up, down, left, right);
+			jPlayer.update_player();
+			spawner.update_spawn(enemies,bullets);
+
+			for(int i= 0;i<enemies.size();i++){
+				enemies.get(i).update_enemy();
+			}
+			for(int i= 0;i<bullets.size();i++){
+				bullets.get(i).update_bullet();
+			}
+
+			collision.check_hit(bullets,enemy,jPlayer);
+			collision.remove_dead_object(bullets,enemies);
+
+			
             visualPanel.repaint();
 			
             try {
