@@ -16,9 +16,12 @@ public class Game {
 		Client chatClient = new Client();
         chatClient.setChatWindow(jChat);
 		chatClient.connect("Player1");
-
+		
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//means we can close the window through top right x
 
+		//arraylists
+		ArrayList<Enemy> enemies = new ArrayList<Enemy>();
+		ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 
         //JPanels don't show up on the JFrame window by default
 		JPanel visualPanel = new JPanel() {//defining cutom behavior for JPanel
