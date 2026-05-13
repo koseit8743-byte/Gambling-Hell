@@ -7,7 +7,7 @@ import java.util.Random;
 public class SpawnEnemy{
 
 	int spawn_time =0, shoot_time = 0;
-	int spawn_freq = 90, shoot_freq = 60;
+	int spawn_freq = 150, shoot_freq = 120;
 
 	Random rand = new Random();
 
@@ -18,7 +18,7 @@ public class SpawnEnemy{
 
 		if(spawn_time >= spawn_freq){
 			//MAX 15 enemies on screen at once
-			if(enemies.size() < 15){
+			if(enemies.size() < 25){
 				int enemy_x = rand.nextInt(1000);
 				int enemy_y= 0;
 

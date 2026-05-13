@@ -15,6 +15,9 @@ public class Player {
 	int width=10;
 	int height=10;
 
+	Inventory playerinventory = new Inventory();
+	
+
 	boolean alive=true;
 
 	/*
