@@ -1,4 +1,4 @@
-import java.awt*;//Will use Rectangles class for bullets for hit detection
+import java.awt.*;//Will use Rectangles class for bullets for hit detection
 
 
 public class Bullet{
@@ -55,6 +55,11 @@ public class Bullet{
 
 	public Rectangle get_bounds(){//for collision detection
 		return new Rectangle(x,y,width,height);//creates bullet hitbox
+	}
+	
+	public void renderBullet(Graphics bulletspirte) {
+		bulletspirte.setColor(Color.WHITE);
+		bulletsprite.fillOval(x,y,width,height)
 	}
 }		
 

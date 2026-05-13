@@ -14,22 +14,22 @@
 
 ### Team members and our goals:
     - Cook: Gacha/lootbox
-        - Rewards
-        - Skins
-            - Different color skins
-        - Bullet Colors
-        - Use Player's score points
-            - A player can exchange their score for a "wish"
-            - Different rarities of items
-                - Rare - 85% Chance
-                - Epic - 13% Chance
+        - Rewards [DONE]
+        - Skins [DONE]
+            - Different color skins [DONE] 
+        - Bullet Colors [DONE]
+        - Use Player's score points [DONE]
+            - A player can exchange their score for a "wish" [DONE]
+            - Different rarities of items [DONE]
+                - Rare - 85% Chance [DONE]
+                - Epic - 13% Chance [DONE]
                     - Guaranteed epic (or better) item every 10 wishes (To be implemented)
-                - Legedary - 2% Chance
+                - Legedary - 2% Chance [DONE]
                     - Guaranteed a legendary item every 50 wishes (To be implemented)
-            - Set list of items that the player can get from their wishing
+            - Set list of items that the player can get from their wishing [DONE]
                 - Limited for now, more to be added
         - Gacha/Wishing menu (To be implemented)
-        - Inventory System
+        - Inventory System [DONE]
 
      - Osei Tutu: Network/Chat Logic
         - Set up Client/Host Networking [Done]

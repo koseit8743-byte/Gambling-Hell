@@ -16,9 +16,12 @@ public class Game {
 		Client chatClient = new Client();
         chatClient.setChatWindow(jChat);
 		chatClient.connect("Player1");
-
+		
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//means we can close the window through top right x
 
+		//arraylists
+		ArrayList<Enemy> enemies = new ArrayList<Enemy>();
+		ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 
         //JPanels don't show up on the JFrame window by default
 		JPanel visualPanel = new JPanel() {//defining cutom behavior for JPanel
@@ -27,7 +30,7 @@ public class Game {
 			//anything that has to be updated visually should be added here
 			public void paintComponent(Graphics sprite) {
 				super.paintComponent(sprite); //clears old frame kinda like system("clear")
-				testText.setText("just a test, Player X:" + jPlayer.x + " Y:" + jPlayer.y);
+				testText.setText("just a test, Player X:" + jPlayer.x + " Y:" + jPlayer.y + " HP:" + jPlayer.health);
 				jPlayer.renderPlayer(sprite);
 			}//basically overloaded swing's paintComponent method here
 		};
