@@ -59,7 +59,7 @@ public class Bullet{
 	
 	public void renderBullet(Graphics bulletspirte) {
 		bulletspirte.setColor(Color.WHITE);
-		bulletsprite.fillOval(x,y,width,height)
+		bulletsprite.fillOval(x,y,width,height);
 	}
 }		
 

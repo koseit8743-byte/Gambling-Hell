@@ -7,7 +7,7 @@ import java.util.Random;
 public class SpawnEnemy{
 
 	int spawn_time =0, shoot_time = 0;
-	int spawn_freq = 90, shoot_freq = 60;
+	int spawn_freq = 150, shoot_freq = 120;
 
 	Random rand = new Random();
 
@@ -18,7 +18,7 @@ public class SpawnEnemy{
 
 		if(spawn_time >= spawn_freq){
 			//MAX 15 enemies on screen at once
-			if(enemies.size() < 15){
+			if(enemies.size() < 25){
 				int enemy_x = rand.nextInt(1000);
 				int enemy_y= 0;
 
@@ -38,10 +38,24 @@ public class SpawnEnemy{
 				int sy= ene.y+ene.height;
 
 				
-				int patternchoice = rand.nextInt(2);//random shot pattern assignment
+				int patternchoice = rand.nextInt(3);//random shot pattern assignment
 
 				if(patternchoice==0){//straight down shot
 					bullets.add(new Bullet(sx,sy,true,0,8));
+				}
+				else if(patternchoice==2){
+					bullets.add(new Bullet(sx,sy,true,0, -6));
+					bullets.add(new Bullet(sx,sy,true,0, 6));
+
+					bullets.add(new Bullet(sx,sy,true,-6, 0));
+					bullets.add(new Bullet(sx,sy,true,6, 0));
+
+					bullets.add(new Bullet(sx,sy,true,-4, -4));
+					bullets.add(new Bullet(sx,sy,true,4, -4));
+
+					bullets.add(new Bullet(sx,sy,true,-4, 4));
+					bullets.add(new Bullet(sx,sy,true,4, 4));
+
 				}
 				else{//diagonal 3 way shot
 					bullets.add(new Bullet(sx,sy,true,-3, 6));
