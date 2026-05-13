@@ -1,4 +1,6 @@
 import java.awt.Rectangle;
+import java.awt.Graphics;
+import java.awt.Color;
 
 public class Enemy{
 	int x,y,width=30,height=30, health=3, speed=4;
@@ -23,5 +25,10 @@ public class Enemy{
 
 	public Rectangle get_bounds(){//collision detection
 		return new Rectangle(x,y,width,height);
+	}
+
+	public void renderEnemy(Graphics enemysprite) {
+		enemysprite.setColor(Color.RED);
+		enemysprite.fillRect(x,y,width,height);
 	}
 }
