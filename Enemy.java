@@ -1,4 +1,6 @@
 import java.awt.Rectangle;
+import java.awt.Graphics;
+import java.awt.Color;
 
 public class Enemy{
 	int x,y,width=30,height=30, health=3, speed=4;

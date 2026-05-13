@@ -1,4 +1,4 @@
-import java.awt*;//Will use Rectangles class for bullets for hit detection
+import java.awt.*;//Will use Rectangles class for bullets for hit detection
 
 
 public class Bullet{
