@@ -64,6 +64,8 @@ public class Game {
 					right = true;
 				} else if (in.getKeyCode() == KeyEvent.VK_SHIFT) {// hold shift to sprint, might convert to a dash with cooldown later
 					jPlayer.speed = 6;
+				} else if (in.getKeyCode() == KeyEvent.VK_SPACE) {
+					jPlayer.shoot(bullets);
 				}
 			}
 
