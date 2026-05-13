@@ -23,6 +23,9 @@ public class Game {
 		ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 		ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 
+		SpawnEnemy spawner = new SpawnEnemy();
+		ObjectCollision collision = new ObjectCollision();
+
         //JPanels don't show up on the JFrame window by default
 		JPanel visualPanel = new JPanel() {//defining cutom behavior for JPanel
 		
@@ -90,7 +93,23 @@ public class Game {
 
         //game loop
         while (true) {
+
+			if(!jPlayer.alive){
+				break;
+			}
             jPlayer.updatePos(up, down, left, right);
+			jPlayer.update_player();
+			spawner.update_spawn(enemies,bullets);
+
+			for(int i= 0;i<enemies.size();i++)
+				enemies.get(i).update_enemy();
+			for(int i= 0;i<bullets.size();i++)
+				bullets.get(i).update_bullet();
+
+			collision.check_hit(bullets,enemy,jPlayer);
+			collision.remove_dead_object(bullets,enemies);
+
+			
             visualPanel.repaint();
 			
             try {
