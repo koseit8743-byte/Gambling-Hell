@@ -17,9 +17,9 @@ public class Inventory {
 		}
 	}
 	public GachaItem getItem(int index) {
-		if (index < 0 || index >= ownedItems.size() {
+		if (index < 0 || index >= ownedItems.size()) {
 			return null;
 		}
-		retrun ownedItems.get(index);
+		return ownedItems.get(index);
 	}
 }

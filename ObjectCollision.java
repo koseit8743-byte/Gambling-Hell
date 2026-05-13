@@ -21,7 +21,7 @@ public class ObjectCollision{
 
 					Enemy ene=enemies.get(j);
 
-					if(bull.get_bounds().interescts(ene.get_bounds())){//If hitboxes interect then enemy takes damage and bullet ends
+					if(bull.get_bounds().intersects(ene.get_bounds())){//If hitboxes interect then enemy takes damage and bullet ends
 						ene.take_damage(1);
 						bull.exists=false;
 

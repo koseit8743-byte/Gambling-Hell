@@ -59,7 +59,7 @@ public class Bullet{
 	
 	public void renderBullet(Graphics bulletspirte) {
 		if (is_enemy) {
-			bulletspirte.setColor(Color.RED);
+			bulletsprite.setColor(Color.RED);
 		} else {
 			bulletsprite.setColor(Color.GREEN);
 		}
