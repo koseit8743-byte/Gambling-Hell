@@ -57,8 +57,8 @@ public class Bullet{
 		return new Rectangle(x,y,width,height);//creates bullet hitbox
 	}
 	
-	public void renderBullet(Graphics bulletspirte) {
-		bulletspirte.setColor(Color.WHITE);
+	public void renderBullet(Graphics bulletsprite) {
+		bulletsprite.setColor(Color.WHITE);
 		bulletsprite.fillOval(x,y,width,height);
 	}
 }		

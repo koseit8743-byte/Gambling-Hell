@@ -61,6 +61,7 @@ public class SpawnEnemy{
 					bullets.add(new Bullet(sx,sy,true,-3, 6));
 					bullets.add(new Bullet(sx,sy,true,0, 7));
 					bullets.add(new Bullet(sx,sy,true,3, 6));
+				}
 			}
 			shoot_time=0;
 		}
