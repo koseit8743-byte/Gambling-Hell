@@ -31,11 +31,13 @@
         - Gacha/Wishing menu (To be implemented)
         - Inventory System [DONE]
 
-    - Osei Tutu: Network/Chat Logic
-        - Set up Client/Host Networking
-        - Handle Server communication 
-        - Have ability to connect multiple clients to server
-        - Chat through networking
+     - Osei Tutu: Network/Chat Logic
+        - Set up Client/Host Networking [Done]
+        - Handle Server communication [Done]
+        - Have ability to connect multiple clients to server [Done]
+        -Chat through networking [Done]
+        -Integrate chat into game window 
+        -Send game state over network
 
     - Robles: Game 
         - Create Player, Enemy, and Bullet Logic IN PROGRESS
