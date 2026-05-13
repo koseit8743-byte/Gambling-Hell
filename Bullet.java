@@ -58,8 +58,12 @@ public class Bullet{
 	}
 	
 	public void renderBullet(Graphics bulletspirte) {
-		bulletspirte.setColor(Color.WHITE);
-		bulletsprite.fillOval(x,y,width,height);
+		if (is_enemy) {
+			bulletspirte.setColor(Color.RED);
+		} else {
+			bulletsprite.setColor(Color.GREEN);
+		}
+			bulletsprite.fillOval(x,y,width,height);
 	}
 }		
 
