@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Game {
 	//bool flags for movement
-	static boolean up, down, left, right, paused, gameover=false, shoot;
+	static boolean up, down, left, right, paused, gameover=false, startscreen = true, shoot;
 	public static void main(String[] args) {
 		JFrame window = new JFrame("Gambling Hell"); //the JFrame will create the window for the Game
 		Player jPlayer = new Player(); //window in param to get width/height of window
@@ -18,6 +18,11 @@ public class Game {
 		//chatClient.connect("Player1");
 		
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//means we can close the window through top right x
+
+		//title screen images
+		Image titleSprite = new ImageIcon("Sprites/title.png").getImage();
+		Image titleBG = new ImageIcon("Sprites/bliss.jpg").getImage();
+
 
 		//arraylists
 		ArrayList<Enemy> enemies = new ArrayList<Enemy>();
