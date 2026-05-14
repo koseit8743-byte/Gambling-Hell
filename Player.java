@@ -80,6 +80,20 @@ public class Player {
 		if (d) y += speed;
 		if (l) x -= speed;
 		if (r) x += speed;
+
+		if (x<0){
+			x=0;
+		}
+		if(y<0){
+			y=0;
+		}
+		if(x+width>1080){
+			x=1080-width;
+		}
+		if(y+height>720){
+			y=720-height;
+		}
+
 	}
 	
 	public void renderPlayer(Graphics playersprite) {
