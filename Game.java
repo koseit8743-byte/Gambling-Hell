@@ -13,9 +13,9 @@ public class Game {
 		
 		Chat jChat = new Chat();
 		// kwabe
-		Client chatClient = new Client();
-        chatClient.setChatWindow(jChat);
-		chatClient.connect("Player1");
+		//Client chatClient = new Client();
+        //chatClient.setChatWindow(jChat);
+		//chatClient.connect("Player1");
 		
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//means we can close the window through top right x
 
@@ -124,7 +124,7 @@ public class Game {
             visualPanel.repaint();
 			
             try {
-                Thread.sleep(16); //sets the speed of the game basically, like the framerate. Won't work without the try/catch loop for some reason
+                Thread.sleep(32); //sets the speed of the game basically, like the framerate. Won't work without the try/catch loop for some reason
             } catch (Exception e) {};        
         }
 	}

@@ -57,7 +57,7 @@ public class Bullet{
 		return new Rectangle(x,y,width,height);//creates bullet hitbox
 	}
 	
-	public void renderBullet(Graphics bulletspirte) {
+	public void renderBullet(Graphics bulletsprite) {
 		if (is_enemy) {
 			bulletsprite.setColor(Color.RED);
 		} else {

@@ -4,6 +4,9 @@ import java.awt.Color;
 import javax.swing.JFrame;
 import java.awt.Rectangle;
 import java.util.ArrayList;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import java.awt.Image;
 
 public class Player {
 	public int health = 5;
@@ -19,18 +22,21 @@ public class Player {
 	public int shoot_cooldown=0;
 	public int shoot_delay=5;
 
+	Image pSprite;
+
 	public int shot_type=0;
 
 	Inventory playerinventory = new Inventory();
 	
-
+	
 	boolean alive=true;
-
-	/*
-	public Player(JFrame framepanel) {
-		x = framepanel.getWidth() / 2;
-		y = framepanel.getHeight() / 2;
-	}*/
+	
+	
+	public Player() {
+		x = 640; 
+		y = 360;
+		pSprite = new ImageIcon("Sprites/smile.gif").getImage();
+	}
 	
 	public void teleportPlayer(JFrame framepanel) {
 		x = framepanel.getWidth() / 2;
@@ -77,8 +83,9 @@ public class Player {
 	}
 	
 	public void renderPlayer(Graphics playersprite) {
-		playersprite.setColor(Color.GREEN);
-		playersprite.fillRect(x,y,width,height);
+		//playersprite.setColor(Color.GREEN);
+		//playersprite.fillRect(x,y,width,height);
+		playersprite.drawImage(pSprite, x , y, 20, 20, null);
 	}
 
 	public Rectangle get_bounds(){
