@@ -14,8 +14,8 @@ public class Game {
 		Chat jChat = new Chat();
 		// kwabe
 		Client chatClient = new Client();
-        chatClient.setChatWindow(jChat);
-		chatClient.connect("Player1");
+        //chatClient.setChatWindow(jChat);
+		//chatClient.connect("Player1");
 		
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//means we can close the window through top right x
 
