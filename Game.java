@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Game {
 	//bool flags for movement
-	static boolean up, down, left, right, paused;
+	static boolean up, down, left, right, paused, gameover=false, shoot;
 	public static void main(String[] args) {
 		JFrame window = new JFrame("Gambling Hell"); //the JFrame will create the window for the Game
 		Player jPlayer = new Player(); //window in param to get width/height of window
@@ -44,6 +44,15 @@ public class Game {
 				for(int i= 0;i<bullets.size();i++){
 					bullets.get(i).renderBullet(sprite);
 				}
+				if(gameover){
+					sprite.setColor(Color.WHITE);
+					sprite.setFont(new Font("Arial",Font.BOLD,60));
+					sprite.drawString("GAME OVER",360,300);
+					sprite.setFont(new Font("Arial",Font.PLAIN,30));
+					sprite.drawString("Final Score: "+jPlayer.score,420,360);
+				}
+
+
 			}//basically overloaded swing's paintComponent method here
 		};
 
@@ -65,7 +74,8 @@ public class Game {
 				} else if (in.getKeyCode() == KeyEvent.VK_SHIFT) {// hold shift to sprint, might convert to a dash with cooldown later
 					jPlayer.speed = 6;
 				} else if (in.getKeyCode() == KeyEvent.VK_SPACE) {
-					jPlayer.shoot(bullets);
+					//jPlayer.shoot(bullets);
+					shoot=true;
 				}
 			}
 
@@ -81,6 +91,8 @@ public class Game {
                     right = false;
                 } else if (in.getKeyCode() == KeyEvent.VK_SHIFT) {
 					jPlayer.speed = 3;
+				} else if (in.getKeyCode() == KeyEvent.VK_SPACE) {
+					shoot = false;
 				}
 			}
 			public void keyTyped(KeyEvent doesntmatter) {} //has to be here to avoid an error
@@ -105,21 +117,28 @@ public class Game {
         //game loop
         while (true) {
 
-			
-            jPlayer.updatePos(up, down, left, right);
-			jPlayer.update_player();
-			spawner.update_spawn(enemies,bullets);
+			if(!gameover){
+				jPlayer.updatePos(up, down, left, right);
+				jPlayer.update_player();
+				if(shoot){
+					jPlayer.shoot(bullets);
+				}
+				spawner.update_spawn(enemies,bullets);
 
-			for(int i= 0;i<enemies.size();i++){
-				enemies.get(i).update_enemy();
+				for(int i= 0;i<enemies.size();i++){
+					enemies.get(i).update_enemy();
+				}
+				for(int i= 0;i<bullets.size();i++){
+					bullets.get(i).update_bullet();
+				}
+
+				collision.check_hit(bullets,enemies,jPlayer);
+				collision.remove_dead_object(bullets,enemies);
+
+				if(jPlayer.health<=0){
+					gameover=true;
+				}
 			}
-			for(int i= 0;i<bullets.size();i++){
-				bullets.get(i).update_bullet();
-			}
-
-			collision.check_hit(bullets,enemies,jPlayer);
-			collision.remove_dead_object(bullets,enemies);
-
 			
             visualPanel.repaint();
 			
