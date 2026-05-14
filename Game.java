@@ -25,7 +25,7 @@ public class Game {
 		
 		JButton startButton = new JButton("GET ME IN THERE");
 		startButton.setBounds(390,350,300,80);
-	
+			
 		//arraylists
 		ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 		ArrayList<Bullet> bullets = new ArrayList<Bullet>();
@@ -47,7 +47,7 @@ public class Game {
 					return;
 				}
 
-				testText.setText("just a test, Player X:" + jPlayer.x + " Y:" + jPlayer.y + " HP:" + jPlayer.health);
+				testText.setText("X:" + jPlayer.x + " Y:" + jPlayer.y + " HP:" + jPlayer.health);
 				jPlayer.renderPlayer(sprite);
 
 				//render bullets and enemies
@@ -111,11 +111,21 @@ public class Game {
 			}
 			public void keyTyped(KeyEvent doesntmatter) {} //has to be here to avoid an error
 		});
-
+		//button stuff
+		visualPanel.setLayout(null);
 		visualPanel.setBackground(Color.DARK_GRAY);
-		
+		visualPanel.add(startButton);
+		startButton.addActionListener(new ActionListener(){
+			//logic for when button is clicked
+			public void actionPerformed(ActionEvent e) {
+				startscreen = false;
+				startButton.setVisible(false);
+				window.requestFocus();//gets input to work on the game window again
+			}
+		});
 		
         testText.setForeground(Color.WHITE);
+		testText.setBounds(490,20,300,40);
 		visualPanel.add(testText);
 
 		visualPanel.setPreferredSize(new Dimension(1080, 720)); //sets the visualPanel size, it'll get added to the JFrame and the JFrame will resize to fit the panel
@@ -131,7 +141,7 @@ public class Game {
         //game loop
         while (true) {
 
-			if(!gameover){
+			if(!gameover && !startscreen){
 				jPlayer.updatePos(up, down, left, right);
 				jPlayer.update_player();
 				if(shoot){
