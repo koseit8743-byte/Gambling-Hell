@@ -20,7 +20,7 @@ public class Game {
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//means we can close the window through top right x
 
 		//title screen images
-		Image titleSprite = new ImageIcon("Sprites/title.png").getImage();
+		Image titleSprite = new ImageIcon("Sprites/Title.png").getImage();
 		Image titleBG = new ImageIcon("Sprites/bliss.jpg").getImage();
 		
 		JButton startButton = new JButton("GET ME IN THERE");
@@ -40,6 +40,13 @@ public class Game {
 			//anything that has to be updated visually should be added here
 			public void paintComponent(Graphics sprite) {
 				super.paintComponent(sprite); //clears old frame kinda like system("clear")
+				
+				if (startscreen) {
+					sprite.drawImage(titleBG, 0,0,1080,720,null);
+					sprite.drawImage(titleSprite,250,100,100*6,34*6,null);
+					return;
+				}
+
 				testText.setText("just a test, Player X:" + jPlayer.x + " Y:" + jPlayer.y + " HP:" + jPlayer.health);
 				jPlayer.renderPlayer(sprite);
 
