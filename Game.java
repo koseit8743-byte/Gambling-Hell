@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Game {
 	//bool flags for movement
-	static boolean up, down, left, right, paused, gameover=false, shoot;
+	static boolean up, down, left, right, paused, gameover=false, startscreen = true, shoot;
 	public static void main(String[] args) {
 		JFrame window = new JFrame("Gambling Hell"); //the JFrame will create the window for the Game
 		Player jPlayer = new Player(); //window in param to get width/height of window
@@ -19,13 +19,20 @@ public class Game {
 		
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//means we can close the window through top right x
 
+		//title screen images
+		Image titleSprite = new ImageIcon("Sprites/Title.png").getImage();
+		Image titleBG = new ImageIcon("Sprites/bliss.jpg").getImage();
+		
+		JButton startButton = new JButton("GET ME IN THERE");
+		startButton.setBounds(390,350,300,80);
+			
 		//arraylists
 		ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 		ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 
 		SpawnEnemy spawner = new SpawnEnemy();
 		ObjectCollision collision = new ObjectCollision();
-
+		
         //JPanels don't show up on the JFrame window by default
 		JPanel visualPanel = new JPanel() {//defining cutom behavior for JPanel
 		
@@ -33,7 +40,14 @@ public class Game {
 			//anything that has to be updated visually should be added here
 			public void paintComponent(Graphics sprite) {
 				super.paintComponent(sprite); //clears old frame kinda like system("clear")
-				testText.setText("just a test, Player X:" + jPlayer.x + " Y:" + jPlayer.y + " HP:" + jPlayer.health);
+				
+				if (startscreen) {
+					sprite.drawImage(titleBG, 0,0,1080,720,null);
+					sprite.drawImage(titleSprite,250,100,100*6,34*6,null);
+					return;
+				}
+
+				testText.setText("X:" + jPlayer.x + " Y:" + jPlayer.y + " HP:" + jPlayer.health);
 				jPlayer.renderPlayer(sprite);
 
 				//render bullets and enemies
@@ -97,11 +111,21 @@ public class Game {
 			}
 			public void keyTyped(KeyEvent doesntmatter) {} //has to be here to avoid an error
 		});
-
+		//button stuff
+		visualPanel.setLayout(null);
 		visualPanel.setBackground(Color.DARK_GRAY);
-		
+		visualPanel.add(startButton);
+		startButton.addActionListener(new ActionListener(){
+			//logic for when button is clicked
+			public void actionPerformed(ActionEvent e) {
+				startscreen = false;
+				startButton.setVisible(false);
+				window.requestFocus();//gets input to work on the game window again
+			}
+		});
 		
         testText.setForeground(Color.WHITE);
+		testText.setBounds(490,20,300,40);
 		visualPanel.add(testText);
 
 		visualPanel.setPreferredSize(new Dimension(1080, 720)); //sets the visualPanel size, it'll get added to the JFrame and the JFrame will resize to fit the panel
@@ -117,7 +141,7 @@ public class Game {
         //game loop
         while (true) {
 
-			if(!gameover){
+			if(!gameover && !startscreen){
 				jPlayer.updatePos(up, down, left, right);
 				jPlayer.update_player();
 				if(shoot){
