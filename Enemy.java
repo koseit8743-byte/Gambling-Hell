@@ -22,6 +22,10 @@ public class Enemy{
 		if(health<=0){//death
 			exists=false;
 		}
+
+		if(y>720){
+			exists=false;
+		}
 	}
 
 	public void take_damage(int damage){
