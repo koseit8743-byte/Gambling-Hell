@@ -62,7 +62,7 @@ public class GachaSystem {
 			selectedRarity = Rarity.RARE;
 		}
 		ArrayList<GachaItem> validItems = new ArrayList<>();
-		for (GachaItem : lootPool) {
+		for (GachaItem item : lootPool) {
 			if (item.getRarity() == selectedRarity) {
 				validItems.add(item);
 			}
