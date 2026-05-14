@@ -22,15 +22,17 @@ public class Game {
 		//title screen images
 		Image titleSprite = new ImageIcon("Sprites/title.png").getImage();
 		Image titleBG = new ImageIcon("Sprites/bliss.jpg").getImage();
-
-
+		
+		JButton startButton = new JButton("GET ME IN THERE");
+		startButton.setBounds(390,350,300,80);
+	
 		//arraylists
 		ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 		ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 
 		SpawnEnemy spawner = new SpawnEnemy();
 		ObjectCollision collision = new ObjectCollision();
-
+		
         //JPanels don't show up on the JFrame window by default
 		JPanel visualPanel = new JPanel() {//defining cutom behavior for JPanel
 		
