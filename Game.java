@@ -14,8 +14,8 @@ public class Game {
 		Chat jChat = new Chat();
 		// kwabe
 		Client chatClient = new Client();
-       // chatClient.setChatWindow(jChat);
-		//chatClient.connect("Player1");
+        chatClient.setChatWindow(jChat);
+		chatClient.connect("Player1");
 		
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//means we can close the window through top right x
 
@@ -83,7 +83,7 @@ public class Game {
 					jPlayer.speed = 3;
 				}
 			}
-			public void keyTyped(KeyEvent doesntmatter) {}; //has to be here to avoid an error
+			public void keyTyped(KeyEvent doesntmatter) {} //has to be here to avoid an error
 		});
 
 		visualPanel.setBackground(Color.DARK_GRAY);
@@ -105,9 +105,7 @@ public class Game {
         //game loop
         while (true) {
 
-			if(!jPlayer.alive){
-				break;
-			}
+			
             jPlayer.updatePos(up, down, left, right);
 			jPlayer.update_player();
 			spawner.update_spawn(enemies,bullets);

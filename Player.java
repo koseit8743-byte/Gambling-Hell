@@ -6,20 +6,20 @@ import java.awt.Rectangle;
 import java.util.ArrayList;
 
 public class Player {
-	int health = 5;
-	int score = 0;
-	int speed = 3;
+	public int health = 5;
+	public int score = 0;
+	public int speed = 3;
 
-	int x = 100;
-	int y = 100;
+	public int x = 100;
+	public int y = 100;
 
-	int width=10;
-	int height=10;
+	public int width=10;
+	public int height=10;
 
-	int shoot_cooldown=0;
-	int shoot_delay=5;
+	public int shoot_cooldown=0;
+	public int shoot_delay=5;
 
-	int shot_type=0;
+	public int shot_type=0;
 
 	Inventory playerinventory = new Inventory();
 	
