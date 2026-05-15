@@ -10,7 +10,7 @@ import java.awt.Image;
 
 public class Player {
 	public int health = 5;
-	public int score = 0;
+	public int score = 500;//is 500 so kerney can test gacha system
 	public int speed = 3;
 
 	public int x = 100;

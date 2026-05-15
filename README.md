@@ -40,14 +40,14 @@
         -Send game state over network
 
     - Robles: Game 
-        - Create Player, Enemy, and Bullet Logic IN PROGRESS
-        - Incorporate Inventory IN PROGRESS
-        - Handle taking damage/health  DONE
-        - Bullet direction/Patterns logic DONE
-        - Collision System DONE
-        - Handle Score  DONE
-        - Spawn characters DONE
-        - Object/Character removal DONE
+        - Create Player, Enemy, and Bullet Logic [DONE]
+        - Incorporate Inventory [DONE]
+        - Handle taking damage/health [DONE]
+        - Bullet direction/Patterns logic [DONE]
+        - Collision System [DONE]
+        - Handle Score  [DONE]
+        - Spawn characters [DONE]
+        - Object/Character removal [DONE]
 
     - Laura: UI/Using Swing
         [DONE] Have chat display
