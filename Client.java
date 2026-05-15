@@ -19,6 +19,12 @@ public class Client {
 	public void setChatWindow(Chat chat){
 		this.chatWindow = chat;
 	}
+	
+	public void sendMessage(string message) {
+		if (connected) {
+			out.println(username + ": " + message);
+		}
+	} 
 
 	public void connect(String name){
 		this.username = name;
