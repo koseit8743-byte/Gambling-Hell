@@ -11,7 +11,7 @@ public class Client {
 	private BufferedReader in;
 	private Socket socket;
 	private String username;
-	private Char chatWindow;
+	private Chat chatWindow;
 	private boolean connected = false;
 
 	public Client(){}
@@ -30,7 +30,7 @@ public class Client {
 			connected = true;
 
 			System.out.println("Connected to server as " + username);
-			out.println(username + " has joined the chat")
+			out.println(username + " has joined the chat");
 
 				Thread receiveThread = new Thread(()-> {
 					try {
@@ -40,12 +40,12 @@ public class Client {
 						while((message = in.readLine()) != null){
 							if (chatWindow != null){
 
-								int colonInd = message.index0f(":");
+								int colonInd = message.indexOf(":");
 
 
 								if (colonIndex > 0){
 									String sender = message.substring(0, colonIndex);
-									String msg = message.substring(0, colonIndex + 1).trim();
+									String msg = message.substring( colonIndex + 1).trim();
 									chatWindow.addIncomingMessage(sender, msg);
 								}
 
