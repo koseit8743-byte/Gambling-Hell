@@ -18,6 +18,7 @@ public class Game {
 
 		JFrame window = new JFrame("Gambling Hell"); //the JFrame will create the window for the Game
 		Player jPlayer = new Player(); //window in param to get width/height of window
+		GachaMenu menu = new GachaMenu(jPlayer);
 		JLabel testText = new JLabel();
 		
 		Chat jChat = new Chat();
