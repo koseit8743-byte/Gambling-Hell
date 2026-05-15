@@ -25,6 +25,7 @@ public class Player {
 	Image pSprite;
 
 	public int shot_type=0;
+	public Color bulletcolor = Color.WHITE;
 
 	Inventory playerinventory = new Inventory();
 	
@@ -54,20 +55,20 @@ public class Player {
 			int bully = y;
 
 			if(shot_type==0)
-				bullets.add(new Bullet(bullx,bully,false,0,-10));
+				bullets.add(new Bullet(bullx,bully,false,0,-10,bulletcolor));
 
 			else if(shot_type==1){
-				bullets.add(new Bullet(bullx,bully,false,-3,-8));
-				bullets.add(new Bullet(bullx,bully,false,0,-10));
-				bullets.add(new Bullet(bullx,bully,false,3,-8));
+				bullets.add(new Bullet(bullx,bully,false,-3,-8,bulletcolor));
+				bullets.add(new Bullet(bullx,bully,false,0,-10,bulletcolor));
+				bullets.add(new Bullet(bullx,bully,false,3,-8,bulletcolor));
 			}
 
 			else if(shot_type==2){
-				bullets.add(new Bullet(bullx,bully,false,-3,-8));
-				bullets.add(new Bullet(bullx,bully,false,3,-8));
-				bullets.add(new Bullet(bullx,bully,false,0,-10));
-				bullets.add(new Bullet(bullx,bully,false,-5,-7));
-				bullets.add(new Bullet(bullx,bully,false,5,-7));
+				bullets.add(new Bullet(bullx,bully,false,-3,-8,bulletcolor));
+				bullets.add(new Bullet(bullx,bully,false,3,-8,bulletcolor));
+				bullets.add(new Bullet(bullx,bully,false,0,-10,bulletcolor));
+				bullets.add(new Bullet(bullx,bully,false,-5,-7,bulletcolor));
+				bullets.add(new Bullet(bullx,bully,false,5,-7,bulletcolor));
 			}
 			shoot_cooldown=shoot_delay;
 		}
@@ -114,5 +115,32 @@ public class Player {
 			alive=false;
 		}
 	}
+
+	public void apply(GachaItem item){
+		bulletcolor=item.getColor();
+		if(item.getType().equals("PLAYER")){
+			if(item.getRarity() == Rarity.RARE){
+				speed=4;
+			}
+			if(item.getRarity() == Rarity.EPIC){
+				speed=5;
+			}
+			if(item.getRarity() == Rarity.LEGENDARY){
+				speed=6;
+			}
+		}
+		if(item.getType().equals("BULLET")){
+			if(item.getRarity() == Rarity.RARE){
+				shot_type=1;
+			}
+			if(item.getRarity() == Rarity.EPIC){
+				shot_type=2;
+			}
+			if(item.getRarity() == Rarity.LEGENDARY){
+				shot_type=2;
+				shoot_delay=3;
+			}
+		}
+	}	
 
 }

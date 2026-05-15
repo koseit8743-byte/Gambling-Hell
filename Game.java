@@ -60,7 +60,8 @@ public class Game {
 				}
 				sprite.drawImage(gameBG, 0,0,1080,720,null);
 				testText.setText("X:" + jPlayer.x + " Y:" + jPlayer.y + " HP:" + jPlayer.health + " SCORE: " + jPlayer.score);
-				jPlayer.renderPlayer(sprite);
+				//testText.setText("Ene:" + enemies.size() + " bull:" + bullets.size() + " HP:" + jPlayer.health + " SCORE: " + jPlayer.score);
+				//jPlayer.renderPlayer(sprite);
 
 				//render bullets and enemies
 				
@@ -70,6 +71,8 @@ public class Game {
 				for(int i= 0;i<bullets.size();i++){
 					bullets.get(i).renderBullet(sprite);
 				}
+
+				jPlayer.renderPlayer(sprite);
 				if(gameover){
 					sprite.setColor(Color.WHITE);
 					sprite.setFont(new Font("Arial",Font.BOLD,60));
@@ -102,6 +105,14 @@ public class Game {
 				} else if (in.getKeyCode() == KeyEvent.VK_SPACE) {
 					//jPlayer.shoot(bullets);
 					shoot=true;
+				}  else if (in.getKeyCode() == KeyEvent.VK_G) {// hold shift to sprint, might convert to a dash with cooldown later
+					menu.showM();
+				}  else if (in.getKeyCode() == KeyEvent.VK_0) {
+					jPlayer.shot_type=0;
+				}  else if (in.getKeyCode() == KeyEvent.VK_1) {
+					jPlayer.shot_type=1;
+				}  else if (in.getKeyCode() == KeyEvent.VK_2) {
+					jPlayer.shot_type=2;
 				}
 			}
 

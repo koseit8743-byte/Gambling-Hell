@@ -25,7 +25,8 @@ public class ObjectCollision{
 						ene.take_damage(1);
 						bull.exists=false;
 
-						if(!ene.exists){
+						if(ene.health<=0){
+							ene.exists=false;
 							player.score += 10;//Score for killinmg enemy
 						}
 					}

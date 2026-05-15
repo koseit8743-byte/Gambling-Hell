@@ -43,6 +43,7 @@ public class GachaMenu {
 				GachaItem reward = gacha.pull(player);
 				if (reward != null) {
 					player.playerinventory.addItem(reward);
+					player.apply(reward);
 					resultLabel.setText(
 						"You pulled: " +
 						reward.getName() +
@@ -60,11 +61,17 @@ public class GachaMenu {
 		refreshInventory();
 		window.add(panel);
 		window.setSize(400,600);
-		window.setVisible(true);
+		window.setVisible(false);;
+	
 	}
 
 	public void updateLabels() {
 		scoreLabel.setText("Score: " + player.score);
+	}
+
+	public void showM(){
+		window.setVisible(true);
+		window.toFront();
 	}
 
 	public void refreshInventory() {

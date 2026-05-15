@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.Random;
-
+import java.awt.Color;
 
 
 //NEED to create SpawnEnemy object in Game.java and use update_spawn every frame
@@ -41,26 +41,26 @@ public class SpawnEnemy{
 				int patternchoice = rand.nextInt(3);//random shot pattern assignment
 
 				if(patternchoice==0){//straight down shot
-					bullets.add(new Bullet(sx,sy,true,0,8));
+					bullets.add(new Bullet(sx,sy,true,0,8,Color.RED));
 				}
 				else if(patternchoice==2){
-					bullets.add(new Bullet(sx,sy,true,0, -6));
-					bullets.add(new Bullet(sx,sy,true,0, 6));
+					bullets.add(new Bullet(sx,sy,true,0, -6,Color.RED));
+					bullets.add(new Bullet(sx,sy,true,0, 6,Color.RED));
 
-					bullets.add(new Bullet(sx,sy,true,-6, 0));
-					bullets.add(new Bullet(sx,sy,true,6, 0));
+					bullets.add(new Bullet(sx,sy,true,-6, 0,Color.RED));
+					bullets.add(new Bullet(sx,sy,true,6, 0,Color.RED));
 
-					bullets.add(new Bullet(sx,sy,true,-4, -4));
-					bullets.add(new Bullet(sx,sy,true,4, -4));
+					bullets.add(new Bullet(sx,sy,true,-4, -4,Color.RED));
+					bullets.add(new Bullet(sx,sy,true,4, -4,Color.RED));
 
-					bullets.add(new Bullet(sx,sy,true,-4, 4));
-					bullets.add(new Bullet(sx,sy,true,4, 4));
+					bullets.add(new Bullet(sx,sy,true,-4, 4,Color.RED));
+					bullets.add(new Bullet(sx,sy,true,4, 4,Color.RED));
 
 				}
 				else{//diagonal 3 way shot
-					bullets.add(new Bullet(sx,sy,true,-3, 6));
-					bullets.add(new Bullet(sx,sy,true,0, 7));
-					bullets.add(new Bullet(sx,sy,true,3, 6));
+					bullets.add(new Bullet(sx,sy,true,-3, 6,Color.RED));
+					bullets.add(new Bullet(sx,sy,true,0, 7,Color.RED));
+					bullets.add(new Bullet(sx,sy,true,3, 6,Color.RED));
 				}
 			}
 			shoot_time=0;
