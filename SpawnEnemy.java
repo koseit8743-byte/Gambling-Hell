@@ -7,7 +7,7 @@ import java.awt.Color;
 public class SpawnEnemy{
 
 	int spawn_time =0, shoot_time = 0;
-	int spawn_freq = 150, shoot_freq = 120;
+	int spawn_freq = 20, shoot_freq = 40;
 
 	Random rand = new Random();
 
