@@ -2,11 +2,20 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Game {
 	//bool flags for movement
 	static boolean up, down, left, right, paused, gameover=false, startscreen = true, shoot;
+	static String username;
+	static Scanner scanner = new Scanner(System.in);
+
 	public static void main(String[] args) {
+		System.out.print("Enter your name: ");
+		username = scanner.nextLine();
+		scanner.close();
+	
+
 		JFrame window = new JFrame("Gambling Hell"); //the JFrame will create the window for the Game
 		Player jPlayer = new Player(); //window in param to get width/height of window
 		JLabel testText = new JLabel();
@@ -15,7 +24,8 @@ public class Game {
 		// kwabe
 		Client chatClient = new Client();
         chatClient.setChatWindow(jChat);
-		chatClient.connect("Player1");
+		jChat.setClient(chatClient);
+		chatClient.connect(username);
 		
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//means we can close the window through top right x
 

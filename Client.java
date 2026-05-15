@@ -20,7 +20,7 @@ public class Client {
 		this.chatWindow = chat;
 	}
 	
-	public void sendMessage(string message) {
+	public void sendMessage(String message) {
 		if (connected) {
 			out.println(username + ": " + message);
 		}
