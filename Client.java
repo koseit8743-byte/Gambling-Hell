@@ -7,6 +7,73 @@ public class Client {
 
 	private static final String SERVER_ADDRESS = "localhost";
 
+	private PrintWriter out;
+	private BufferedReader in;
+	private Socket socket;
+	private String username;
+	private Char chatWindow;
+	private boolean connected = false;
+
+	public Client(){}
+
+	public void setChatWindow(Chat chat){
+		this.chatWindow = chat;
+	}
+
+	public void connect(String name){
+		this.username = name;
+
+		try{
+			socket = new Socket(SERVER_ADDRESS, PORT);
+			out = new PrintWriter(socket.getOutputStream(), true);
+			in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			connected = true;
+
+			System.out.println("Connected to server as " + username);
+			out.println(username + " has joined the chat")
+
+				Thread receiveThread = new Thread(()-> {
+					try {
+
+						String message;
+
+						while((message = in.readLine()) != null){
+							if (chatWindow != null){
+
+								int colonInd = message.index0f(":");
+
+
+								if (colonIndex > 0){
+									String sender = message.substring(0, colonIndex);
+									String msg = message.substring(0, colonIndex + 1).trim();
+									chatWindow.addIncomingMessage(sender, msg);
+								}
+
+								else {
+									chatWindow.addIncomingMessage("SERVER", message);
+								}
+
+							} else {
+								System.out.println(message);
+							}
+						}
+				}
+
+				catch(IOException e){
+					System.out.println("Disconnected from server");
+				}
+
+			});
+
+			receiveThread.start();
+
+		}  catch(IOException e) {
+			System.out.println("Could not connect to server at " + SERVER_ADDRESS + ":" + PORT);
+		}
+
+	}
+
+
 	public static void main(String[] args){
 		Scanner scanner = new Scanner(System.in);
 
