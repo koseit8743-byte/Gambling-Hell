@@ -35,7 +35,7 @@ public class Game {
 		Image titleBG = new ImageIcon("Sprites/bliss.jpg").getImage();
 		Image gameBG = new ImageIcon("Sprites/blissgrass.jpg").getImage();
 
-		JButton startButton = new JButton("GET ME IN THERE");
+		JButton startButton = new JButton("GET ME IN THERE, and FLIRT");
 		startButton.setBounds(390,350,300,80);
 			
 		//arraylists
