@@ -32,7 +32,8 @@ public class Game {
 		//title screen images
 		Image titleSprite = new ImageIcon("Sprites/Title.png").getImage();
 		Image titleBG = new ImageIcon("Sprites/bliss.jpg").getImage();
-		
+		Image gameBG = new ImageIcon("Sprites/blissgrass.jpg").getImage();
+
 		JButton startButton = new JButton("GET ME IN THERE");
 		startButton.setBounds(390,350,300,80);
 			
@@ -56,8 +57,8 @@ public class Game {
 					sprite.drawImage(titleSprite,250,100,100*6,34*6,null);
 					return;
 				}
-
-				testText.setText("X:" + jPlayer.x + " Y:" + jPlayer.y + " HP:" + jPlayer.health);
+				sprite.drawImage(gameBG, 0,0,1080,720,null);
+				testText.setText("X:" + jPlayer.x + " Y:" + jPlayer.y + " HP:" + jPlayer.health + " SCORE: " + jPlayer.score);
 				jPlayer.renderPlayer(sprite);
 
 				//render bullets and enemies
