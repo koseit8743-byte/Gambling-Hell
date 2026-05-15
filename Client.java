@@ -36,7 +36,7 @@ public class Client {
 			connected = true;
 
 			System.out.println("Connected to server as " + username);
-			out.println(username + " has joined the chat");
+			out.println(username + " has joined the chat. WOW LOOK A BLIND DATE!!  Don't get too naughty when chatting (;");
 
 				Thread receiveThread = new Thread(()-> {
 					try {
