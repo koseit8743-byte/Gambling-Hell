@@ -1,5 +1,5 @@
 import java.awt.*;//Will use Rectangles class for bullets for hit detection
-
+import javax.swing.ImageIcon;
 
 public class Bullet{
 	int x, y, width=6, height=12;
