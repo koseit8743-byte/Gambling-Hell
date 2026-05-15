@@ -3,7 +3,12 @@ import java.awt.*;
 import java.time.LocalTime;
 
 public class Chat {
-	
+	Client client;
+	public void setClient(Client c) {
+		this.client = c;
+	}
+
+
 	JFrame chatWindow;
 	JPanel chatPanel;
 
@@ -28,7 +33,11 @@ public class Chat {
 			String message = textInputBox.getText();
 			timeSent = LocalTime.now().withNano(0).toString();
 			//if we need to edit the message format its on this line here
-			chatArea.append("[" + timeSent + "] Me: " + message + "\n"); 
+			//chatArea.append("[" + timeSent + "] Me: " + message + "\n"); 
+			if (client != null) {
+				client.sendMessage(message);
+			}
+			
 			textInputBox.setText(""); 
 		});
 		chatPanel.add(new JScrollPane(chatArea), BorderLayout.CENTER);
