@@ -43,9 +43,9 @@ public class Client {
 								int colonInd = message.indexOf(":");
 
 
-								if (colonIndex > 0){
-									String sender = message.substring(0, colonIndex);
-									String msg = message.substring( colonIndex + 1).trim();
+								if (colonInd > 0){
+									String sender = message.substring(0, colonInd);
+									String msg = message.substring( colonInd + 1).trim();
 									chatWindow.addIncomingMessage(sender, msg);
 								}
 
