@@ -7,6 +7,7 @@ public class Bullet{
 	
 	boolean is_enemy;
 	boolean exists = true;
+	Color color;
 
 	Image bSprite;
 	Image pbSprite;
@@ -24,9 +25,10 @@ public class Bullet{
 		}
 	}
 
-	public Bullet(int initial_x,int initial_y,boolean enemy,int initial_diagx,int initial_diagy){
+	public Bullet(int initial_x,int initial_y,boolean enemy,int initial_diagx,int initial_diagy,Color c){
 		x=initial_x;
 		y=initial_y;
+		color=c;
 
 		is_enemy=enemy;
 
@@ -69,7 +71,8 @@ public class Bullet{
 			bulletsprite.drawImage(bSprite, x,y,width,height, null);
 		} else {
 			//bulletsprite.setColor(Color.GREEN);
-			bulletsprite.drawImage(pbSprite, x,y, 10,10,null);
+			bulletsprite.setColor(color);
+			bulletsprite.fillRect(x,y,width,height);
 		}
 			//bulletsprite.fillOval(x,y,width,height);
 	}

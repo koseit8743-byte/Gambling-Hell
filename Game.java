@@ -102,6 +102,15 @@ public class Game {
 				} else if (in.getKeyCode() == KeyEvent.VK_SPACE) {
 					//jPlayer.shoot(bullets);
 					shoot=true;
+				}  else if (in.getKeyCode() == KeyEvent.VK_G) {// hold shift to sprint, might convert to a dash with cooldown later
+					System.out.println("G was pressed");
+					menu.showM();
+				}  else if (in.getKeyCode() == KeyEvent.VK_0) {
+					jPlayer.shot_type=0;
+				}  else if (in.getKeyCode() == KeyEvent.VK_1) {
+					jPlayer.shot_type=1;
+				}  else if (in.getKeyCode() == KeyEvent.VK_2) {
+					jPlayer.shot_type=2;
 				}
 			}
 
